@@ -1,0 +1,18 @@
+@import '_normalize';
+
+$color: #000;
+
+body {
+	background: linear-gradient(to left, #FF00C7 0%,#00c7ff 100%);
+	color: $color;
+}
+
+div.content {
+	width: 500px;
+	height: 150px;
+	// border: 1px solid $color;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
