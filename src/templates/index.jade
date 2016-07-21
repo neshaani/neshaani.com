@@ -5,6 +5,11 @@ html
 		link(rel="stylesheet", href="css/main.css")
 	body
 		div.content
-			h1 Welcome to Neshaani
-			p Coming Soon
+			form(action="./go.php", method="POST")
+				h1 Neshaani URL Shortener
+				p
+					span.inputRow
+						input#state.balloon(type='text', placeholder='Paste your long URL here')
+						label(for='state') URL
+
 		script(src="js/main.js")
