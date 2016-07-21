@@ -1,0 +1,27 @@
+{
+  "name": "neshaani.com",
+  "version": "1.0.0",
+  "description": "Neshaani.com Website",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neshaani/neshaani.com.git"
+  },
+  "keywords": [
+    "neshaani",
+    "url",
+    "shortener",
+    "api"
+  ],
+  "author": "Behnam Baharmand <bbaharmand@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/neshaani/neshaani.com/issues"
+  },
+  "homepage": "https://neshaani.com/",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-jade": "^1.1.0"
+  }
+}
