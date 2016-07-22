@@ -3,26 +3,44 @@ var logger = require('./LoggerModule');
 logger.log('Project Home: https://github.com/neshaani/neshaani');
 
 (function($) {
-	$('input#state').on('click', function() {
-		var req = {
-			"url" : "http://google.com"
-		};
 
-		$.ajax({
-			type: "POST",
-			url: "https://api.neshaani.com/api/generate",
-			data: JSON.stringify(req),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			success: function(data){
-				alert(data);
-			},
-			failure: function(errMsg) {
-				alert(errMsg);
+	$('input#state').keypress(function(event) {
+		
+		if (event.which == 13) { // on Pressing Enter
+			event.preventDefault();
+
+			var inputVal = $('input#state').val().toLowerCase();
+
+			if (!/^https?:\/\//i.test(inputVal)) {
+			    inputVal = 'http://' + inputVal;
 			}
-		});
 
-		$('p.result').fadeIn();
+			var req = {
+				"url" : inputVal
+			};
+
+			$.ajax({
+				type: "POST",
+				url: "http://api.neshaani.app/api/generate",
+				data: JSON.stringify(req),
+				crossDomain: true,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data){
+					var url = data.generate.url;
+					$('p.result').text(url);
+					console.log(url);
+				},
+				failure: function(errMsg) {
+					console.log(errMsg);
+				}
+			});
+
+			$('p.result').fadeIn();
+		}
+
 
 	});
+
+
 })(jQuery);
