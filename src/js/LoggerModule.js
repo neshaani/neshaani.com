@@ -1,5 +1,5 @@
 module.exports = {
-	log: function(string) {
-		if (console) console.log(string);
-	}
+    log: function(string) {
+        if (console) console.log(string);
+    }
 }
