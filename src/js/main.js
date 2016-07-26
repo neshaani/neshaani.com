@@ -48,6 +48,7 @@ logger.log('Project Home: https://github.com/neshaani/neshaani');
             });
 
             $result.fadeIn();
+            $result.css("opacity", "1");
         }
 
     });
