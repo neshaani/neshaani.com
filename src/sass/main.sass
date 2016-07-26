@@ -55,7 +55,7 @@ body
 		outline: none
 		text-decoration: none
 
-		img, object
+		img
 			padding-right: 29px
 			opacity: .6
 			&:hover
@@ -69,3 +69,31 @@ body
 		width: 250px
 		&:hover
 			opacity: .6
+
+//@media only screen and (max-device-width: 480px)
+@media only screen and (max-device-width: 480px)
+	.content
+		position: relative
+		left: 0
+		top: 50px
+		img
+			margin: 40px auto
+		input
+			width: 90%
+			margin: 0 auto
+	.links
+		bottom: 30px
+		position: fixed
+		text-align: center
+		margin: 0 auto
+		width: 100%
+		left: 0
+		a:last-of-type img
+				padding-right: 0
+	.badge
+		bottom: 100px
+		left: 50%
+		margin-left: -125px
+		position: fixed
+		right: auto
+		width: 100%
