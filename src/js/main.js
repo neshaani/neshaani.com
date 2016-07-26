@@ -4,12 +4,23 @@ logger.log('Project Home: https://github.com/neshaani/neshaani');
 
 (function($) {
 
-    $('input#state').keypress(function(event) {
+    $query = $('input.query');
+    $result = $('input.result');
+
+    $query.keypress(function(event) {
 
         if (event.which == 13) { // on Pressing Enter
             event.preventDefault();
 
-            var inputVal = $('input#state').val().toLowerCase();
+            $result.val('Loading...');
+
+            var inputVal = $query.val().toLowerCase().trim();
+            
+            if (inputVal == "" || inputVal.length == 0) {
+                $query.val("");
+                $query.attr("placeholder", "URL Could not be Empty!");
+                return false;
+            }
 
             if (!/^https?:\/\//i.test(inputVal)) {
                 inputVal = 'http://' + inputVal;
@@ -21,14 +32,14 @@ logger.log('Project Home: https://github.com/neshaani/neshaani');
 
             $.ajax({
                 type: "POST",
-                url: "http://api.neshaani.app/api/generate",
+                url: "https://api.neshaani.com/api/generate",
                 data: JSON.stringify(req),
                 crossDomain: true,
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function(data){
                     var url = data.generate.url;
-                    $('p.result').text(url);
+                    $result.val(url);
                     console.log(url);
                 },
                 failure: function(errMsg) {
@@ -36,9 +47,8 @@ logger.log('Project Home: https://github.com/neshaani/neshaani');
                 }
             });
 
-            $('p.result').fadeIn();
+            $result.fadeIn();
         }
-
 
     });
 

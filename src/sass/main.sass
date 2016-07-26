@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800)
+@import '_normalize'
+
+$bg: #EFEFEF
+$border: #979797
+$resultbg: #F0F9DD
+
+@mixin rounded($radius: 0.4em)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+*
+  box-sizing: border-box
+
+html
+  font-family: "Open Sans", sans
+  height: 100%
+
+body
+  background: $bg
+
+.content
+	position: absolute
+	left: 88px
+	top: 70px
+
+	img, input
+		display: block
+	
+	input
+		@include rounded()
+		background: transparent
+		border: 1px solid $border
+		font-size: 1.3em
+		font-weight: 700
+		height: 60px
+		margin: 2em 0
+		padding: .85em
+		width: 500px
+		opacity: .6
+		&:focus
+			outline: 0
+			opacity: 1
+		&.result
+			background: $resultbg
+			display: none
+			font-weight: 200
+			margin-top: -.8em
+.links
+	bottom: 40px
+	left: 88px
+	position: fixed
+	a
+		outline: none
+		text-decoration: none
+
+		img, object
+			padding-right: 29px
+			opacity: .6
+			&:hover
+				opacity: 1
+.badge
+	bottom: 20px
+	position: fixed
+	right: 50px
+	img.neshaani-badge
+		opacity: .2
+		width: 250px
+		&:hover
+			opacity: .6
