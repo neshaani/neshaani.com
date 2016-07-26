@@ -5,7 +5,7 @@ var uglify = require('gulp-uglify');
 var browserify = require('gulp-browserify');
 var gulpif = require('gulp-if');
 
-var env = process.env.NODE_ENV || "development";
+var env = process.env.NODE_ENV || "production";
 var outputDir = 'dist';
 
 gulp.task('jade', function() {
