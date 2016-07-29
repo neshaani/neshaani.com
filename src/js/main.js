@@ -2,7 +2,7 @@ var logger = require('./LoggerModule');
 
 logger.log('Project Home: https://github.com/neshaani/neshaani');
 
-(function($) {
+$(function() {
 
     $query = $('input.query');
     $result = $('input.result');
@@ -54,4 +54,4 @@ logger.log('Project Home: https://github.com/neshaani/neshaani');
     });
 
 
-})(jQuery);
+});
