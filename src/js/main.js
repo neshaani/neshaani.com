@@ -6,6 +6,7 @@ $(function() {
 
     $query = $('input.query');
     $result = $('input.result');
+    $logoBtn = $('a#logoBtn');
 
     $query.keypress(function(event) {
 
@@ -40,6 +41,7 @@ $(function() {
                 success: function(data){
                     var url = data.generate.url;
                     $result.val(url);
+                    $logoBtn.attr("href", url).attr("title", "Visit: " + url);
                     console.log(url);
                 },
                 failure: function(errMsg) {
