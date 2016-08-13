@@ -15,7 +15,7 @@ $(function() {
 
             $result.val('Loading...');
 
-            var inputVal = $query.val().toLowerCase().trim();
+            var inputVal = $query.val().trim();
             
             if (inputVal == "" || inputVal.length == 0) {
                 $query.val("");
